@@ -9,7 +9,6 @@ package com.enc.common.enccommon.utils;
 
 import org.bouncycastle.crypto.Digest;
 import org.bouncycastle.crypto.digests.*;
-import org.bouncycastle.util.encoders.Hex;
 
 public class HashUtil {
 
@@ -21,6 +20,9 @@ public class HashUtil {
         switch (algName) {
             case "sha1":
                 digest = new SHA1Digest();
+                break;
+            case "sha3":
+                digest = new SHA3Digest();
                 break;
             case "sha224":
                 digest = new SHA224Digest();
@@ -34,6 +36,12 @@ public class HashUtil {
             case "sha512":
                 digest = new SHA512Digest();
                 break;
+            case "md2":
+                digest = new MD2Digest();
+                break;
+            case "md4":
+                digest = new MD4Digest();
+                break;
             case "md5":
                 digest = new MD5Digest();
                 break;
@@ -46,15 +54,14 @@ public class HashUtil {
         return digest;
     }
 
-    public static String digest(byte[] plainData, Digest digest) {
+    public static byte[] digest(byte[] plainData, Digest digest) {
         if (plainData == null || digest == null){
-            return "";
+            return null;
         }
         digest.update(plainData, 0, plainData.length);
         byte[] digestBytes = new byte[digest.getDigestSize()];
         digest.doFinal(digestBytes, 0);
-        String digestHex = Hex.toHexString(digestBytes);
-        return digestHex;
+        return digestBytes;
     }
 
 }

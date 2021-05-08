@@ -13,6 +13,6 @@ export function hash(data) {
   return request({
     url: '/hash/digest',
     method: 'post',
-    params: JSON.stringify(data)
+    data: data
   })
 }

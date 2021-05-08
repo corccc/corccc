@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.bouncycastle:bouncycastle-spring-boot-starter:1.60">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/bouncycastle/bouncycastle-spring-boot-starter/1.60/bouncycastle-spring-boot-starter-1.60.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/bouncycastle/bouncycastle-spring-boot-starter/1.60/bouncycastle-spring-boot-starter-1.60-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/bouncycastle/bouncycastle-spring-boot-starter/1.60/bouncycastle-spring-boot-starter-1.60-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

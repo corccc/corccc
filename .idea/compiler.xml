@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="enc-hash" />
+        <module name="enc-common" />
+        <module name="enc-symm" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="enc-common" target="1.8" />
+      <module name="enc-hash" target="1.8" />
+      <module name="enc-symm" target="1.8" />
+      <module name="enc-tool" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="enc-common" options="-parameters" />
+      <module name="enc-hash" options="-parameters" />
+      <module name="enc-symm" options="-parameters" />
+    </option>
+  </component>
+</project>

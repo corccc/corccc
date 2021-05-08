@@ -13,6 +13,7 @@ import com.enc.common.enccommon.utils.HashUtil;
 import com.enc.common.enccommon.utils.StringUtil;
 import com.enc.hash.enchash.service.IHashService;
 import org.bouncycastle.crypto.Digest;
+import org.bouncycastle.util.encoders.Hex;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -23,22 +24,23 @@ public class HashService implements IHashService {
         ResponseEntity responseEntity = new ResponseEntity();
         String algName      = encEntity.getAlgName().toLowerCase().replaceAll("-","");
         String formatString = StringUtil.formatHexString(encEntity.getData());
-        byte[] digestBytes  = StringUtil.hexStringToBytes(formatString);
+        byte[] dataBytes    = StringUtil.hexStringToBytes(formatString);
         Digest digest       = HashUtil.getDigest(algName);
-        String cipherStr    = HashUtil.digest(digestBytes, digest);
+        byte[] digestBytes  = HashUtil.digest(dataBytes, digest);
+        String digestStr    = Hex.toHexString(digestBytes);
         String showStr      = "";
         if (digest == null) {
             showStr = "不支持的 hash 算法";
         } else {
             showStr = "算法: " + algName + "\n"
-                    + "数据: " + "长度 " + digestBytes.length + " 字节" + "\n"
+                    + "数据: " + "长度 " + dataBytes.length + " 字节" + "\n"
                     + formatString + "\n"
                     + "HASH值: " + "长度 " + digestBytes.length + " 字节" + "\n"
-                    + cipherStr;
+                    + digestStr;
         }
         responseEntity.setShowData(showStr);
         responseEntity.setData(formatString);
-        responseEntity.setCipherData(cipherStr);
+        responseEntity.setCipherData(digestStr);
         return responseEntity;
     }
 

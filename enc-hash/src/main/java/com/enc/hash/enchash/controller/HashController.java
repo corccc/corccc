@@ -29,7 +29,6 @@ public class HashController extends BaseController {
 
     @PostMapping("/digest")
     public ResponseEntity digest(@RequestBody RequestEntity hashEntity){
-        System.out.println("==================");;
         return hashService.digestEntity(hashEntity);
     }
 }
