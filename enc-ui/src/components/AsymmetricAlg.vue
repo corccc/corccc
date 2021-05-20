@@ -1,18 +1,35 @@
 <template>
-  <el-row>
-    <el-col :span="24" :top="0" :left="0">
-      <el-menu class="el-menu-demo" mode="horizontal" @select="" :router="true">
-        <el-menu-item index="/AsymmetricEccAlg"> ECC 算法</el-menu-item>
-        <el-menu-item index="/AsymmetricRsaAlg"> RSA 算法</el-menu-item>
-        <el-menu-item index="/AsymmetricSm2Alg"> SM2 算法</el-menu-item>
-      </el-menu>
-    </el-col>
-  </el-row>
+  <div class="app-container">
+    <el-tabs v-model="activeName" @tab-click="handleClick">
+      <el-tab-pane label="SM2 算法" name="sm2">
+        <AsymmSM2/>
+      </el-tab-pane>
+      <el-tab-pane label="ECC 算法" name="ecc">
+        <AsymmECC/>
+      </el-tab-pane>
+      <el-tab-pane label="RSA 算法" name="rsa">
+        <AsymmRSA/>
+      </el-tab-pane>
+    </el-tabs>
+  </div>
 </template>
 
 <script>
+    import AsymmSM2 from "./AsymmSM2";
+    import AsymmECC from "./AsymmECC";
+    import AsymmRSA from "./AsymmRSA";
     export default {
-        name: "Asymmetric"
+      components: {AsymmRSA, AsymmECC, AsymmSM2},
+      data() {
+        return {
+          activeName: "sm2",
+        }
+      },
+      methods: {
+        handleClick(tab, event) {
+          console.log(tab, event);
+        }
+      }
     }
 </script>
 
@@ -21,5 +38,9 @@
     font-size: 14px;
     text-align: left;
     line-height: 14px;
+  }
+
+  el-tabs {
+    background-color: green;
   }
 </style>

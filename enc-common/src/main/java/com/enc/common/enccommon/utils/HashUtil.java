@@ -10,7 +10,7 @@ package com.enc.common.enccommon.utils;
 import org.bouncycastle.crypto.Digest;
 import org.bouncycastle.crypto.digests.*;
 
-public class HashUtil {
+public class HashUtil extends BaseUtil {
 
     public static Digest getDigest(String algName) {
         Digest digest = null;

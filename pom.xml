@@ -12,6 +12,7 @@
         <module>enc-common</module>
         <module>enc-hash</module>
         <module>enc-symm</module>
+        <module>enc-asymms</module>
     </modules>
     <dependencyManagement>
         <dependencies>

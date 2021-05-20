@@ -9,6 +9,19 @@ import router from './router/index'
 
 Vue.use(ElementUI);
 
+// The Vue build version to load with the `import` command
+Vue.prototype.msgSuccess = function (msg) {
+  this.$message({ showClose: true, message: msg, type: "success" });
+}
+
+Vue.prototype.msgError = function (msg) {
+  this.$message({ showClose: true, message: msg, type: "error" });
+}
+
+Vue.prototype.msgInfo = function (msg) {
+  this.$message.info(msg);
+}
+
 new Vue({
   el: '#app',
   components: { App },

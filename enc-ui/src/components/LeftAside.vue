@@ -53,14 +53,15 @@
   a {
     text-decoration: none;
   }
-  /*el-menu-item {*/
-  /*  text-decoration-color: #42b983;*/
-  /*}*/
+  el-menu-item {
+    text-decoration-color: #42b983;
+    text-decoration:none;
+  }
+  router-link {
+    color: green;
+  }
   el-menu-item.is-active {
     background-color: #3370ff !important;
     color: #fff;
-  }
-  el-menu-item {
-    background-color: #333333;
   }
 </style>

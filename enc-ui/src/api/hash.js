@@ -3,7 +3,7 @@ import request from '@/utils/request'
 // Hash Code Version
 export function version() {
   return request({
-    url: 'hash/version',
+    url: '/hash/version',
     method: 'get'
   })
 }

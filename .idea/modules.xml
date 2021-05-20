@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/enc-asymm/enc-asymm.iml" filepath="$PROJECT_DIR$/enc-asymm/enc-asymm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/enc-asymms/enc-asymms.iml" filepath="$PROJECT_DIR$/enc-asymms/enc-asymms.iml" />
       <module fileurl="file://$PROJECT_DIR$/enc-common/enc-common.iml" filepath="$PROJECT_DIR$/enc-common/enc-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/enc-hash/enc-hash.iml" filepath="$PROJECT_DIR$/enc-hash/enc-hash.iml" />
       <module fileurl="file://$PROJECT_DIR$/enc-symm/enc-symm.iml" filepath="$PROJECT_DIR$/enc-symm/enc-symm.iml" />

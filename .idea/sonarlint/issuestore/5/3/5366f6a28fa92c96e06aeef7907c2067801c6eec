@@ -1,0 +1,16 @@
+
+a
+java:S1128"?Remove this unused import 'org.bouncycastle.util.encoders.Hex'.(ÕÅ§Ûúÿÿÿÿ8Õú¸Ç—/
+€
+java:S1488&"^Immediately return this expression instead of assigning it to the temporary variable "yBytes".(ô’—ıÿÿÿÿ8Õú¸Ç—/
+V	java:S1251"<This block of commented-out lines of code should be removed.(·Ãÿ•ùÿÿÿÿ
+~
+java:S14886"aImmediately return this expression instead of assigning it to the temporary variable "publicKey".(ßÔ¥º8»´Ã—/
+€
+java:S1488 "^Immediately return this expression instead of assigning it to the temporary variable "xBytes".(Æ‡ÈÅùÿÿÿÿ8Õú¸Ç—/
+z
+java:S1488,"^Immediately return this expression instead of assigning it to the temporary variable "dBytes".(İˆ*8äÑÈÇ—/
+N
+java:S11720"1Remove this unused method parameter "privateKey".(ğŒ°Ñ8»´Ã—/
+u
+java:S1488"_Immediately return this expression instead of assigning it to the temporary variable "keyPair".(è¶²¾

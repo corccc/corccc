@@ -1,80 +1,27 @@
 import request from '@/utils/request'
 
-// 查询ECA管理列表
-export function listCa(query) {
+// Symm Code Version
+export function version() {
   return request({
-    url: '/ca/ca/list',
-    method: 'get',
-    params: query
-  })
-}
-
-// 查询ECA管理详细
-export function getCa(id) {
-  return request({
-    url: '/ca/ca/' + id,
+    url: '/symm/version',
     method: 'get'
   })
 }
 
-// 新增ECA管理
-export function addCa(data) {
+// Symm Encrypt Function
+export function encrypt(data) {
   return request({
-    url: '/ca/ca',
+    url: '/symm/encrypt',
     method: 'post',
     data: data
   })
 }
 
-// 修改ECA管理
-export function updateCa(data) {
+// Symm Decrypt Function
+export function decrypt(data) {
   return request({
-    url: '/ca/ca',
-    method: 'put',
-    data: data
-  })
-}
-
-// 删除ECA管理
-export function delCa(id) {
-  return request({
-    url: '/ca/ca/' + id,
-    method: 'delete'
-  })
-}
-
-// 导出ECA管理
-export function exportCa(query) {
-  return request({
-    url: '/ca/ca/export',
-    method: 'get',
-    params: query
-  })
-}
-
-// 下载ECA管理请求
-export function downloadTbs(data) {
-  return request({
-    url: '/ca/ca/downloadTbs',
+    url: '/symm/decrypt',
     method: 'post',
     data: data
-  })
-}
-
-// 下载ECA证书管理请求
-export function downloadCert(data) {
-  return request({
-    url: '/ca/ca/downloadCert',
-    method: 'post',
-    data:data
-  })
-}
-
-// 导入ECA管理
-export function uploadCa(id) {
-  return request({
-    url: '/ca/ca/upload',
-    method: 'post',
-    data: id
   })
 }

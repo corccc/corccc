@@ -20,15 +20,19 @@ import org.springframework.stereotype.Service;
 public class HashService implements IHashService {
 
     public ResponseEntity digestEntity(RequestEntity encEntity) {
-
+        String showStr = "";
         ResponseEntity responseEntity = new ResponseEntity();
+        if (encEntity.getData() == null || encEntity.getData().length() == 0) {
+            showStr = "请输入数据";
+            responseEntity.setShowData(showStr);
+            return responseEntity;
+        }
         String algName      = encEntity.getAlgName().toLowerCase().replaceAll("-","");
         String formatString = StringUtil.formatHexString(encEntity.getData());
         byte[] dataBytes    = StringUtil.hexStringToBytes(formatString);
         Digest digest       = HashUtil.getDigest(algName);
         byte[] digestBytes  = HashUtil.digest(dataBytes, digest);
         String digestStr    = Hex.toHexString(digestBytes);
-        String showStr      = "";
         if (digest == null) {
             showStr = "不支持的 hash 算法";
         } else {
