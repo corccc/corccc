@@ -1,0 +1,12 @@
+
+k	java:S117f"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÍÞù´øÿÿÿÿ
+w
+java:S1488ˆ"[Immediately return this expression instead of assigning it to the temporary variable "dec".(¾ÎÝ¥úÿÿÿÿ
+u
+java:S14888"_Immediately return this expression instead of assigning it to the temporary variable "keyPair".(è¶²¾
+v
+java:S1488x"[Immediately return this expression instead of assigning it to the temporary variable "enc".(Ó¸œ—ûÿÿÿÿ
+<
+java:S1168t"&Return an empty array instead of null.(¥¹ï
+=
+java:S1168„"&Return an empty array instead of null.(¥¹ï

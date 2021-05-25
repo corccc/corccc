@@ -6,8 +6,10 @@ import SymmetricAlg from '../components/SymmetricAlg'
 import AsymmetricAlg from "../components/AsymmetricAlg";
 import HashAlg from "../components/HashAlg";
 import CpkAlg from "../components/CpkAlg";
+import EcdhAlg from "../components/EcdhAlg";
 import X509Parse from "../components/X509Parse";
 import DataConvert from "../components/DataConvert";
+import About from "../components/About";
 
 Vue.use(VueRouter);
 
@@ -39,6 +41,11 @@ export const constantRoutes = [
         name: 'CpkAlg',
       },
       {
+        path: '/EcdhAlg',
+        component: EcdhAlg,
+        name: 'EcdhAlg',
+      },
+      {
         path: '/X509Parse',
         component: X509Parse,
         name: 'X509Parse',
@@ -48,6 +55,11 @@ export const constantRoutes = [
         component: DataConvert,
         name: 'DataConvert',
       },
+      {
+        path: '/About',
+        component: About,
+        name: 'About',
+      }
     ]
   },
 ]

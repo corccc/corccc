@@ -7,9 +7,11 @@
  */
 package com.enc.common.enccommon.utils;
 
+import com.enc.common.enccommon.exception.CustomException;
+
 public class StringUtil {
 
-    public static String formatHexString(String str) {
+    public static String formatHexString(String str) throws CustomException {
         return str
                 .replaceAll("0x", "")
                 .replaceAll("[^0-9a-fA-F]","");
@@ -18,7 +20,7 @@ public class StringUtil {
     public static String bytesToHexString(byte[] src) {
         StringBuilder builder = new StringBuilder();
         if (src == null || src.length <= 0) {
-            return null;
+            return "";
         }
         String hv;
         for (int i = 0; i < src.length; i++) {

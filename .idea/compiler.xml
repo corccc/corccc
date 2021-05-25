@@ -8,8 +8,10 @@
         <outputRelativeToContentRoot value="true" />
         <module name="demo" />
         <module name="enc-common" />
+        <module name="enc-dcdh" />
         <module name="enc-hash" />
         <module name="enc-asymm" />
+        <module name="enc-ecdh" />
         <module name="enc-symm" />
         <module name="enc-asymms" />
       </profile>
@@ -19,6 +21,9 @@
       <module name="enc-asymm" target="1.8" />
       <module name="enc-asymms" target="1.8" />
       <module name="enc-common" target="1.8" />
+      <module name="enc-dcdh" target="1.5" />
+      <module name="enc-ecdh" target="1.8" />
+      <module name="enc-ecdh (1)" target="1.8" />
       <module name="enc-hash" target="1.8" />
       <module name="enc-symm" target="1.8" />
       <module name="enc-tool" target="1.5" />
@@ -30,6 +35,8 @@
       <module name="enc-asymm" options="-parameters" />
       <module name="enc-asymms" options="-parameters" />
       <module name="enc-common" options="-parameters" />
+      <module name="enc-ecdh" options="-parameters" />
+      <module name="enc-ecdh (1)" options="-parameters" />
       <module name="enc-hash" options="-parameters" />
       <module name="enc-symm" options="-parameters" />
     </option>

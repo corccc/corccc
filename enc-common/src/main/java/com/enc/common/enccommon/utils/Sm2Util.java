@@ -7,12 +7,16 @@
  */
 package com.enc.common.enccommon.utils;
 
+import org.bouncycastle.crypto.CipherParameters;
+import org.bouncycastle.crypto.CryptoException;
 import org.bouncycastle.crypto.Digest;
 import org.bouncycastle.crypto.InvalidCipherTextException;
 import org.bouncycastle.crypto.engines.SM2Engine;
 import org.bouncycastle.crypto.params.ECPrivateKeyParameters;
 import org.bouncycastle.crypto.params.ECPublicKeyParameters;
+import org.bouncycastle.crypto.params.ParametersWithID;
 import org.bouncycastle.crypto.params.ParametersWithRandom;
+import org.bouncycastle.crypto.signers.SM2Signer;
 import org.bouncycastle.crypto.util.PrivateKeyFactory;
 import org.bouncycastle.crypto.util.PublicKeyFactory;
 import org.bouncycastle.jcajce.provider.asymmetric.ec.BCECPrivateKey;
@@ -91,16 +95,23 @@ public class Sm2Util extends BaseUtil {
      * @return 公钥
      */
     public static PublicKey generatePublicKey(PrivateKey privateKey) throws NoSuchAlgorithmException, InvalidKeySpecException {
-        if (privateKey == null) {
+        if (privateKey == null)
             return null;
-        }
         ECPoint GPoint          = ((BCECPrivateKey) privateKey).getParameters().getG();
         ECPoint pubPoint        = GPoint.multiply(((BCECPrivateKey) privateKey).getD());
         ECPublicKeySpec keySpec = new ECPublicKeySpec (pubPoint, ((BCECPrivateKey) privateKey).getParameters());
         return KeyFactory.getInstance("EC").generatePublic(keySpec);
     }
 
+    /**
+     * 加密
+     * @param publicKey 公钥
+     * @param in        待加密数据
+     * @return 密文值
+     */
     public static byte[] encrypt(PublicKey publicKey, byte[] in) throws InvalidCipherTextException, IOException {
+        if (publicKey == null || in == null)
+            return null;
         SM2Engine sm2Engine = new SM2Engine();
         ECPublicKeyParameters aPub = (ECPublicKeyParameters) PublicKeyFactory.createKey(publicKey.getEncoded());
         sm2Engine.init(true, new ParametersWithRandom(aPub, new SecureRandom()));
@@ -108,7 +119,15 @@ public class Sm2Util extends BaseUtil {
         return enc;
     }
 
+    /**
+     * 解密
+     * @param privateKey 私钥
+     * @param in         待解密数据
+     * @return 明文值
+     */
     public static byte[] decrypt(PrivateKey privateKey, byte[] in) throws InvalidCipherTextException, IOException {
+        if (privateKey == null || in == null)
+            return null;
         SM2Engine sm2Engine = new SM2Engine();
         ECPrivateKeyParameters aPriv = (ECPrivateKeyParameters) PrivateKeyFactory.createKey(privateKey.getEncoded());
         sm2Engine.init(false, aPriv);
@@ -116,4 +135,51 @@ public class Sm2Util extends BaseUtil {
         return dec;
     }
 
+    /**
+     * 签名
+     * @param privateKey 私钥
+     * @param tbs        签名原文
+     * @param withId     ID
+     * @return 签名结果
+     */
+    public static byte[] sign(PrivateKey privateKey, byte[] tbs, byte[] withId) throws IOException, CryptoException {
+        if (privateKey == null || tbs == null || withId == null)
+            return null;
+        SM2Signer signer = new SM2Signer();
+        CipherParameters param = null;
+        ECPrivateKeyParameters aPri = (ECPrivateKeyParameters) PrivateKeyFactory.createKey(privateKey.getEncoded());
+        ParametersWithRandom pwr = new ParametersWithRandom(aPri, new SecureRandom());
+        if (withId != null) {
+            param = new ParametersWithID(pwr, withId);
+        } else {
+            param = pwr;
+        }
+        signer.init(true, param);
+        signer.update(tbs, 0, tbs.length);
+        return signer.generateSignature();
+    }
+
+    /**
+     * 验证签名
+     * @param publicKey 公钥
+     * @param tbs       签名原文
+     * @param sign      签名值
+     * @param withId    ID
+     * @return 验证结果
+     */
+    public static boolean verify(PublicKey publicKey, byte[] tbs, byte[] sign, byte[] withId) throws IOException {
+        if (publicKey == null || tbs == null || sign == null || withId == null)
+            return false;
+        SM2Signer signer = new SM2Signer();
+        CipherParameters param = null;
+        ECPublicKeyParameters aPub = (ECPublicKeyParameters) PublicKeyFactory.createKey(publicKey.getEncoded());
+        if (withId != null) {
+            param = new ParametersWithID(aPub, withId);
+        } else {
+            param = aPub;
+        }
+        signer.init(false, param);
+        signer.update(tbs, 0, tbs.length);
+        return signer.verifySignature(sign);
+    }
 }

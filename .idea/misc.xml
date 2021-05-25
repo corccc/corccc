@@ -6,11 +6,13 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/enc-asymm/pom.xml" />
         <option value="$PROJECT_DIR$/enc-asymms/pom.xml" />
+        <option value="$PROJECT_DIR$/enc-ecdh/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/enc-asymm/pom.xml" />
+        <option value="$PROJECT_DIR$/enc-dcdh/pom.xml" />
       </set>
     </option>
   </component>

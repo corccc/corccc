@@ -1,45 +1,44 @@
 <template>
   <div class="app-container">
     <el-form label-position="top" label-width="200px" id="formlabel">
-      <el-form-item label="公钥 x:">
+      <el-form-item :label="pxLabel">
         <el-col :span="16">
           <el-input
             type="textarea"
             :rows="2"
-            v-model="publicKeyX"
-            @input="changeInputValueAction('publicx')"
+            v-model="px"
+            @input="changeInputValueAction('px')"
             clearable>
           </el-input>
         </el-col>
       </el-form-item>
 
-      <el-form-item label="公钥 y:">
+      <el-form-item :label="pyLabel">
         <el-col :span="16">
           <el-input
             type="textarea"
             :rows="2"
-            v-model="publicKeyY"
-            @input="changeInputValueAction('publicy')"
+            v-model="py"
+            @input="changeInputValueAction('py')"
             clearable>
           </el-input>
         </el-col>
       </el-form-item>
 
-      <el-form-item label="私钥:">
+      <el-form-item :label="priLabel">
         <el-col :span="16">
           <el-input
             type="textarea"
             :rows="2"
-            v-model="privateKey"
-            @input="changeInputValueAction('private')"
+            v-model="pri"
+            @input="changeInputValueAction('pri')"
             clearable>
           </el-input>
         </el-col>
       </el-form-item>
-
       <el-row :gutter="0">
         <el-form-item label="曲线选择：">
-          <el-select v-model="secp_value" placeholder="请选择">
+          <el-select v-model="secp" placeholder="请选择">
             <el-option
               v-for="item in secp_options"
               :key="item.value"
@@ -47,14 +46,14 @@
               :value="item.value">
             </el-option>
           </el-select>
-          <el-button type="primary" size="small" @click="sm2CalAction('genkey')">产生密钥对</el-button>
-          <el-button type="primary" size="small" @click="sm2CalAction('calpub')">私钥计算公钥</el-button>
+          <el-button type="primary" size="small" @click="ecCalAction('genkey')">产生密钥对</el-button>
+          <el-button type="primary" size="small" @click="ecCalAction('calpub')">私钥计算公钥</el-button>
         </el-form-item>
       </el-row>
       <el-form>
         <el-row :gutter="10">
           <el-col :span="8">
-            <el-form-item label="数据:">
+            <el-form-item :label="inputDataLabel">
               <el-input
                 type="textarea"
                 :rows="7"
@@ -69,83 +68,205 @@
               <el-input
                 type="textarea"
                 :rows="7"
-                v-model="inputData"
-                @input="changeInputValueAction('inputData')"
+                v-model="outputData"
                 clearable>
               </el-input>
             </el-form-item>
           </el-col>
         </el-row>
       </el-form>
-      <el-form-item label="哈希算法：">
-        <el-select v-model="hash_value" placeholder="请选择">
-          <el-option
-            v-for="item in hash_options"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value">
-          </el-option>
-        </el-select>
-      </el-form-item>
       <el-form-item>
-        <el-button type="primary" size="small" @click="sm2CalAction('sign')">签名</el-button>
-        <el-button type="primary" size="small" @click="sm2CalAction('vsign')">验签名</el-button>
+        <el-button type="primary" size="small" @click="ecCalAction('enc')">ECC 加密(ECIES)</el-button>
+        <el-button type="primary" size="small" @click="ecCalAction('dec')">ECC 解密(ECIES)</el-button>
+      </el-form-item>
+      <el-form-item :label="inputSignLabel">
+        <el-input
+          type="textarea"
+          :rows="2"
+          v-model="inputSign"
+          @input="changeInputValueAction('inputSign')"
+          clearable>
+        </el-input>
       </el-form-item>
 
+      <el-row :gutter="0">
+        <el-form-item label="哈希选择：">
+          <el-select v-model="hash" placeholder="请选择">
+            <el-option
+              v-for="item in hash_options"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+            </el-option>
+          </el-select>
+          <el-button type="primary" size="small" @click="ecCalAction('sign')">ECC 签名</el-button>
+          <el-button type="primary" size="small" @click="ecCalAction('vsign')">ECC 验签</el-button>
+        </el-form-item>
+      </el-row>
     </el-form>
   </div>
 </template>
 
 <script>
-    export default {
-      data() {
-        return {
-          publicKeyX: '',
-          publicKeyY: '',
-          privateKey: '',
-          inputData: '',
-          inputID: '',
-          // 曲线信息
-          secp_options: [{
-            value: 'X9_62_prime192v1',
-            label: 'X9_62_prime192v1'
-          }, {
-            value: 'Secp_224r1',
-            label: 'Secp_224r1'
-          }, {
-            value: 'X9_62_prime256v1',
-            label: 'X9_62_prime256v1'
-          }, {
-            value: 'Secp_384r1',
-            label: 'Secp_384r1'
-          }, {
-            value: 'Secp_521r1',
-            label: 'Secp_521r1'
-          }],
-          secp_value: 'X9_62_prime256v1',
-          // 签名哈希信息
-          hash_options:[{
-            value: 'sha-1',
-            label: 'SHA-1'
-          }, {
-            value: 'sha-256',
-            label: 'SHA-256'
-          }, {
-            value: 'md5',
-            label: 'MD5'
-          }],
-          hash_value:'sha-1'
+  import { version, genKeyPair, calPubKey, enc, dec, sign, vsign} from "@/api/asymm"
+  import { formatInputValue, formatLengthValue } from "@/utils/string"
+  export default {
+    data() {
+      return {
+        pxLabel: '公钥 x: ',
+        px: '',
+        pyLabel: '公钥 y: ',
+        py: '',
+        priLabel: '私钥: ',
+        pri: '',
+        inputDataLabel: '数据: ',
+        inputData: '',
+        outputData: '',
+        inputSignLabel: '签名数据: ',
+        inputSign: '',
+        // 曲线信息
+        secp_options: [{
+          value: 'secp128r1',
+          label: 'secp128r1'
+        }, {
+          value: 'secp160k1',
+          label: 'secp160k1'
+        }, {
+          value: 'secp160r1',
+          label: 'secp160r1'
+        }, {
+          value: 'secp192k1',
+          label: 'secp192k1'
+        }, {
+          value: 'secp192r1',
+          label: 'secp192r1'
+        }, {
+          value: 'secp224k1',
+          label: 'secp224k1'
+        }, {
+          value: 'secp224r1',
+          label: 'secp224r1'
+        }, {
+          value: 'secp256r1',
+          label: 'secp256r1'
+        }],
+        secp: 'secp256r1',
+        // 哈希信息
+        hash_options: [{
+          value: 'SHA1withECDSA',
+          label: 'SHA-1'
+        },{
+          value: 'SHA224withECDSA',
+          label: 'SHA-224'
+        },{
+          value: 'SHA256withECDSA',
+          label: 'SHA-256'
+        },{
+          value: 'SHA384withECDSA',
+          label: 'SHA-384'
+        },{
+          value: 'SHA512withECDSA',
+          label: 'SHA-512'
+        }],
+      hash: 'SHA256withECDSA',
+      }
+    },
+    methods: {
+      changeInputValueAction(type) {
+        switch (type) {
+          case "px":
+            this.pxLabel = '公钥 x: ' + formatLengthValue(this.px);
+            break;
+          case "py":
+            this.pyLabel = '公钥 y: ' + formatLengthValue(this.py);
+            break;
+          case "pri":
+            this.priLabel = '私钥: ' + formatLengthValue(this.pri);
+            break;
+          case "inputData":
+            this.inputDataLabel = '数据: ' + formatLengthValue(this.inputData);
+            break;
+          case "inputSign":
+            this.inputSignLabel = '签名数据: ' + formatLengthValue(this.inputSign);
+            break;
+          default:
+            break;
         }
       },
-      methods: {
-        changeInputValueAction(type) {
-          console.log(type);
-        },
-        sm2CalAction(type) {
-          console.log(type);
+      ecCalAction(type) {
+        switch (type) {
+          case "genkey":
+            genKeyPair({
+              algName: "ecc",
+              secp: this.secp
+            }).then(response => {
+              this.px = response.data.px;
+              this.py = response.data.py;
+              this.pri = response.data.pri;
+            });
+            break;
+          case "calpub":
+            calPubKey({
+              algName: "ecc",
+              secp: this.secp,
+              pri: this.pri,
+            }).then(response => {
+              this.px = response.data.px;
+              this.py = response.data.py;
+            });
+            break;
+          case "enc":
+            enc({
+              algName: "ecc",
+              secp: this.secp,
+              px: this.px,
+              py: this.py,
+              data: this.inputData,
+            }).then(response => {
+              this.outputData = response.data.showData;
+            });
+            break;
+          case "dec":
+            dec({
+              algName: "ecc",
+              secp: this.secp,
+              pri: this.pri,
+              data: this.inputData,
+            }).then(response => {
+              this.outputData = response.data.showData;
+            });
+            break;
+          case "sign":
+            sign({
+              algName: "ecc",
+              secp: this.secp,
+              pri:  this.pri,
+              data: this.inputData,
+              hash: this.hash,
+            }).then(response => {
+              this.outputData = response.data.showData;
+            });
+            break;
+          case "vsign":
+            vsign({
+              algName: "ecc",
+              secp: this.secp,
+              px: this.px,
+              py: this.py,
+              data: this.inputData,
+              sign: this.inputSign,
+              hash: this.hash,
+            }).then(response => {
+              this.outputData = response.data.showData;
+            });
+            break;
+          default:
+            this.error("不支持的方法");
+            break;
         }
       }
     }
+  }
 </script>
 
 <style scoped>

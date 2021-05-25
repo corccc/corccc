@@ -1,37 +1,37 @@
 <template>
   <div class="app-container">
     <el-form label-position="top" label-width="200px" id="formlabel">
-      <el-form-item label="公钥 x:">
+      <el-form-item :label="pxLabel">
         <el-col :span="16">
           <el-input
             type="textarea"
             :rows="2"
-            v-model="publicKeyX"
-            @input="changeInputValueAction('publicx')"
+            v-model="px"
+            @input="changeInputValueAction('px')"
             clearable>
           </el-input>
         </el-col>
       </el-form-item>
 
-      <el-form-item label="公钥 y:">
+      <el-form-item :label="pyLabel">
         <el-col :span="16">
           <el-input
             type="textarea"
             :rows="2"
-            v-model="publicKeyY"
-            @input="changeInputValueAction('publicy')"
+            v-model="py"
+            @input="changeInputValueAction('py')"
             clearable>
           </el-input>
         </el-col>
       </el-form-item>
 
-      <el-form-item label="私钥:">
+      <el-form-item :label="priLabel">
         <el-col :span="16">
           <el-input
             type="textarea"
             :rows="2"
-            v-model="privateKey"
-            @input="changeInputValueAction('private')"
+            v-model="pri"
+            @input="changeInputValueAction('pri')"
             clearable>
           </el-input>
         </el-col>
@@ -44,7 +44,7 @@
       <el-form>
         <el-row :gutter="10">
           <el-col :span="8">
-            <el-form-item label="数据:">
+            <el-form-item :label="inputDataLabel">
               <el-input
                 type="textarea"
                 :rows="7"
@@ -60,14 +60,13 @@
                 type="textarea"
                 :rows="7"
                 v-model="outputData"
-                @input="changeInputValueAction('outputData')"
                 clearable>
               </el-input>
             </el-form-item>
           </el-col>
         </el-row>
       </el-form>
-      <el-form-item label="ID 标识：">
+      <el-form-item :label="inputIDLabel">
         <el-col :span="16">
           <el-input
             type="textarea"
@@ -80,12 +79,17 @@
       </el-form-item>
 
       <el-form-item>
-        <el-button type="primary" size="small" @click="sm2CalAction('enc')">SM2 加密</el-button>
-        <el-button type="primary" size="small" @click="sm2CalAction('dec')">SM2 解密</el-button>
+        <el-button type="primary" size="small" @click="sm2CalAction('enc')">SM2 加密(C1C2C3)</el-button>
+        <el-button type="primary" size="small" @click="sm2CalAction('dec')">SM2 解密(C1C2C3)</el-button>
       </el-form-item>
-      <el-form-item>
-        <el-radio v-model="radio" label="1">C1C2C3</el-radio>
-        <el-radio v-model="radio" label="2">C1C3C2</el-radio>
+      <el-form-item :label="inputSignLabel">
+        <el-input
+          type="textarea"
+          :rows="2"
+          v-model="inputSign"
+          @input="changeInputValueAction('inputSign')"
+          clearable>
+        </el-input>
       </el-form-item>
       <el-form-item>
         <el-button type="primary" size="small" @click="sm2CalAction('sign')">SM2 签名</el-button>
@@ -96,22 +100,50 @@
 </template>
 
 <script>
-  import { version, genKeyPair, calPubKey } from "@/api/asymm"
+  import { version, genKeyPair, calPubKey, enc, dec, sign, vsign} from "@/api/asymm"
   import { formatInputValue, formatLengthValue } from "@/utils/string"
   export default {
       data() {
         return {
-          publicKeyX: '',
-          publicKeyY: '',
-          privateKey: '',
+          pxLabel: '公钥 x: ',
+          px: '',
+          pyLabel: '公钥 y: ',
+          py: '',
+          priLabel: '私钥: ',
+          pri: '',
+          inputDataLabel: '数据: ',
           inputData: '',
           outputData: '',
-          inputID: '',
-          radio: '1'
+          inputIDLabel: 'ID 标识: ',
+          inputID: '31323334353637383132333435363738',
+          inputSignLabel: '签名数据: ',
+          inputSign: '',
         }
       },
       methods: {
         changeInputValueAction(type) {
+          switch (type) {
+            case "px":
+              this.pxLabel = '公钥 x: ' + formatLengthValue(this.px);
+              break;
+            case "py":
+              this.pyLabel = '公钥 y: ' + formatLengthValue(this.py);
+              break;
+            case "pri":
+              this.priLabel = '私钥: ' + formatLengthValue(this.pri);
+              break;
+            case "inputData":
+              this.inputDataLabel = '数据: ' + formatLengthValue(this.inputData);
+              break;
+            case "inputID":
+              this.inputIDLabel = 'ID 标识: ' + formatLengthValue(this.inputID);
+              break;
+            case "inputSign":
+              this.inputSignLabel = '签名数据: ' + formatLengthValue(this.inputSign);
+              break;
+            default:
+              break;
+          }
             console.log(type);
         },
         sm2CalAction(type) {
@@ -120,27 +152,60 @@
                 genKeyPair({
                   algName: "sm2",
                 }).then(response => {
-                  this.publicKeyX = response.data.px;
-                  this.publicKeyY = response.data.py;
-                  this.privateKey = response.data.pri;
+                  this.px = response.data.px;
+                  this.py = response.data.py;
+                  this.pri = response.data.pri;
                 });
                 break;
               case "calpub":
                 calPubKey({
                   algName: "sm2",
-                  pri: this.privateKey,
+                  pri: this.pri,
                 }).then(response => {
-                  this.publicKeyX = response.data.px;
-                  this.publicKeyY = response.data.py;
+                  this.px = response.data.px;
+                  this.py = response.data.py;
                 });
                 break;
               case "enc":
+                enc({
+                  algName: "sm2",
+                  px: this.px,
+                  py: this.py,
+                  data: this.inputData,
+                }).then(response => {
+                  this.outputData = response.data.showData;
+                });
                 break;
               case "dec":
+                dec({
+                  algName: "sm2",
+                  pri: this.pri,
+                  data: this.inputData,
+                }).then(response => {
+                  this.outputData = response.data.showData;
+                });
                 break;
               case "sign":
+                sign({
+                  algName: "sm2",
+                  pri:  this.pri,
+                  id:   this.inputID,
+                  data: this.inputData,
+                }).then(response => {
+                  this.outputData = response.data.showData;
+                });
                 break;
               case "vsign":
+                vsign({
+                  algName: "sm2",
+                  px: this.px,
+                  py: this.py,
+                  id: this.inputID,
+                  data: this.inputData,
+                  sign: this.inputSign,
+                }).then(response => {
+                  this.outputData = response.data.showData;
+                });
                 break;
               default:
                 this.error("不支持的方法");

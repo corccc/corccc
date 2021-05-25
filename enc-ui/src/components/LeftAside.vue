@@ -20,25 +20,29 @@
 
     <el-menu-item index="3">
 <!--      <i class="el-icon-menu"></i>-->
-      <router-link to="/CpkAlg" >Cpk算法</router-link>
+      <router-link to="/CpkAlg" >CPK 算法</router-link>
     </el-menu-item>
 
     <el-menu-item index="4">
-<!--      <i class="el-icon-menu"></i>-->
-      <router-link to="/X509Parse" >X509证书解析</router-link>
+      <router-link to="/EcdhAlg" >ECDH 算法</router-link>
     </el-menu-item>
 
-    <el-menu-item index="5">
-<!--      <i class="el-icon-menu"></i>-->
-      <router-link to="/DataConvert" >数据转换</router-link>
-    </el-menu-item>
+<!--        <el-menu-item index="5">-->
+<!--&lt;!&ndash;      <i class="el-icon-menu"></i>&ndash;&gt;-->
+<!--      <router-link to="/X509Parse" >X509证书解析</router-link>-->
+<!--    </el-menu-item>-->
+
+<!--    <el-menu-item index="6">-->
+<!--&lt;!&ndash;      <i class="el-icon-menu"></i>&ndash;&gt;-->
+<!--      <router-link to="/DataConvert" >数据转换</router-link>-->
+<!--    </el-menu-item>-->
   </el-menu>
 </template>
 
 <script>
     export default {
       name: "LeftAside",
-      paths: ['SymmetricAlg','ASymmetricAlg','HashAlg','CpkAlg','X509Parse','DataConvert'],
+      paths: ['SymmetricAlg','ASymmetricAlg','HashAlg','CpkAlg','EcdhAlg','X509Parse','DataConvert'],
       methods: {
         handleSelect(key, keyPath) {
           console.log(key)
@@ -53,15 +57,15 @@
   a {
     text-decoration: none;
   }
-  el-menu-item {
-    text-decoration-color: #42b983;
-    text-decoration:none;
-  }
+  /*el-menu-item {*/
+  /*  text-decoration-color: #42b983;*/
+  /*  text-decoration:none;*/
+  /*}*/
   router-link {
     color: green;
   }
-  el-menu-item.is-active {
-    background-color: #3370ff !important;
-    color: #fff;
-  }
+  /*el-menu-item.is-active {*/
+  /*  background-color: #3370ff !important;*/
+  /*  color: #fff;*/
+  /*}*/
 </style>

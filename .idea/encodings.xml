@@ -3,6 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/enc-asymms/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/enc-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/enc-ecdh/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/enc-hash/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/enc-symm/src/main/java" charset="UTF-8" />
   </component>

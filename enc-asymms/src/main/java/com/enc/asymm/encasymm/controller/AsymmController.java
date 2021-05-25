@@ -7,14 +7,12 @@
  */
 package com.enc.asymm.encasymm.controller;
 
-import com.enc.asymm.encasymm.entity.AsymmReqeustEntity;
+import com.enc.asymm.encasymm.entity.AsymmRequestEntity;
 import com.enc.asymm.encasymm.entity.AsymmResponseEntity;
 import com.enc.asymm.encasymm.service.impl.AsymmService;
 import com.enc.common.enccommon.controller.BaseController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import javax.xml.ws.WebEndpoint;
 
 @RestController
 @RequestMapping("/asymm")
@@ -30,12 +28,33 @@ public class AsymmController extends BaseController {
     }
 
     @PostMapping("/genKeyPair")
-    public AsymmResponseEntity genKeyPair(@RequestBody AsymmReqeustEntity reqeustEntity) {
-        return asymmService.genKeyPair(reqeustEntity);
+    public AsymmResponseEntity genKeyPair(@RequestBody AsymmRequestEntity requestEntity) {
+        return asymmService.genKeyPair(requestEntity);
     }
 
     @PostMapping("/calPubKey")
-    public AsymmResponseEntity calPubKey(@RequestBody AsymmReqeustEntity reqeustEntity) {
-        return asymmService.calPubKey(reqeustEntity);
+    public AsymmResponseEntity calPubKey(@RequestBody AsymmRequestEntity requestEntity) {
+        return asymmService.calPubKey(requestEntity);
     }
+
+    @PostMapping("/enc")
+    public AsymmResponseEntity enc(@RequestBody AsymmRequestEntity requestEntity) {
+        return asymmService.enc(requestEntity);
+    }
+
+    @PostMapping("/dec")
+    public AsymmResponseEntity dec(@RequestBody AsymmRequestEntity requestEntity) {
+        return asymmService.dec(requestEntity);
+    }
+
+    @PostMapping("/sign")
+    public AsymmResponseEntity sign(@RequestBody AsymmRequestEntity requestEntity) {
+        return asymmService.sign(requestEntity);
+    }
+
+    @PostMapping("/vsign")
+    public AsymmResponseEntity vsign(@RequestBody AsymmRequestEntity requestEntity) {
+        return asymmService.vsign(requestEntity);
+    }
+
 }

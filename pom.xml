@@ -13,6 +13,7 @@
         <module>enc-hash</module>
         <module>enc-symm</module>
         <module>enc-asymms</module>
+        <module>enc-ecdh</module>
     </modules>
     <dependencyManagement>
         <dependencies>

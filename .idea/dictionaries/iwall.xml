@@ -3,13 +3,19 @@
     <words>
       <w>asymm</w>
       <w>calpub</w>
+      <w>ecies</w>
       <w>fmstr</w>
       <w>formlabel</w>
       <w>inputarea</w>
       <w>inputdata</w>
+      <w>inputlabel</w>
       <w>outputarea</w>
+      <w>prilabel</w>
       <w>publicx</w>
       <w>publicy</w>
+      <w>pxlabel</w>
+      <w>pylabel</w>
+      <w>secp</w>
       <w>sede</w>
       <w>symm</w>
       <w>unsupport</w>
