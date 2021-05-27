@@ -2,6 +2,7 @@
   <dictionary name="iwall">
     <words>
       <w>asymm</w>
+      <w>axios</w>
       <w>calpub</w>
       <w>ecies</w>
       <w>fmstr</w>
@@ -17,6 +18,7 @@
       <w>pylabel</w>
       <w>secp</w>
       <w>sede</w>
+      <w>skey</w>
       <w>symm</w>
       <w>unsupport</w>
       <w>vsign</w>

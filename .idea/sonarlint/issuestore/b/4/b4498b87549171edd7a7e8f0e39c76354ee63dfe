@@ -1,12 +1,39 @@
 
-k	java:S117f"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÍŞù´øÿÿÿÿ
-w
-java:S1488ˆ"[Immediately return this expression instead of assigning it to the temporary variable "dec".(¾Îİ¥úÿÿÿÿ
-u
-java:S14888"_Immediately return this expression instead of assigning it to the temporary variable "keyPair".(è¶²¾
-v
-java:S1488x"[Immediately return this expression instead of assigning it to the temporary variable "enc".(Ó¸œ—ûÿÿÿÿ
+V
+java:S1128"9Remove this unused import 'org.bouncycastle.util.Arrays'.(»ßÈ…8Æí™/
+}
+java:S1488}"[Immediately return this expression instead of assigning it to the temporary variable "dec".(®„…Éüÿÿÿÿ8°½îî˜/
+W
+java:S1191"5Use classes from the Java API instead of Sun classes.(ŞÎÿÏıÿÿÿÿ8ŸîÖî™/
+k
+java:S1128"NRemove this unused import 'org.bouncycastle.math.ec.custom.gm.SM2P256V1Curve'.(œ¯•æ8°İî™/
+D
+java:S1168¥"&Return an empty array instead of null.(¥¹ï8ëÖÃè™/
 <
-java:S1168t"&Return an empty array instead of null.(¥¹ï
-=
-java:S1168„"&Return an empty array instead of null.(¥¹ï
+java:S1168k"&Return an empty array instead of null.(¥¹ï
+¢
+java:S1130£"Remove the declaration of thrown exception 'java.security.NoSuchAlgorithmException', as it cannot be thrown from method's body.(§©ˆ³ûÿÿÿÿ8Ê³ËŠš/
+Q
+java:S1128"/Remove this unused import 'sun.awt.geom.Curve'.(ŞÎÿÏıÿÿÿÿ8¿»×î™/
+¡
+java:S1130£"~Remove the declaration of thrown exception 'java.security.NoSuchProviderException', as it cannot be thrown from method's body.(§©ˆ³ûÿÿÿÿ8Ê³ËŠš/
+V	java:S106©"9Replace this use of System.out or System.err by a logger.(ÍÛÈ·8‚ºÆŠš/
+B
+java:S2129¼"$Remove this "BigInteger" constructor(ƒ¦Ê­8½ñ´Šš/
+[	java:S106½"9Replace this use of System.out or System.err by a logger.(´ÅƒÙøÿÿÿÿ8½ñ´Šš/
+@
+java:S5542{"#Use secure mode and padding scheme.(’ÕÏ¤8¹›ëî˜/
+V	java:S106ª"9Replace this use of System.out or System.err by a logger.(Ïó­Ä8‚ºÆŠš/
+r	java:S117]"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÍŞù´øÿÿÿÿ8¹œãˆš/
+<
+java:S1168z"&Return an empty array instead of null.(¥¹ï
+@
+java:S5542l"#Use secure mode and padding scheme.(’ÕÏ¤8ƒ½àî˜/
+
+java:S1130£"zRemove the declaration of thrown exception 'java.security.InvalidKeyException', as it cannot be thrown from method's body.(§©ˆ³ûÿÿÿÿ8Ê³ËŠš/
+u
+java:S14880"_Immediately return this expression instead of assigning it to the temporary variable "keyPair".(è¶²¾
+x
+java:S1488n"[Immediately return this expression instead of assigning it to the temporary variable "enc".(î×øš8õèêî˜/
+t
+java:S3252©"VUse static access with "com.enc.common.enccommon.utils.BaseUtil" for "getPrivateKeyD".(ÍÛÈ·8‚öËŠš/

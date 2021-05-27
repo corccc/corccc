@@ -1,0 +1,57 @@
+
+Z
+java:S1128	"?Remove this unused import 'org.bouncycastle.util.encoders.Hex'.(ÕÅ§Ûúÿÿÿÿ
+U
+java:S1118":Add a private constructor to hide the implicit public one.(òàª¼ÿÿÿÿÿ
+N
+java:S1197"8Move the array designator from the variable to the type.(ÌÅÁ¢
+<
+java:S1168)"&Return an empty array instead of null.(¥¹ï
+<
+java:S11687"&Return an empty array instead of null.(¥¹ï
+<
+java:S1168<"&Return an empty array instead of null.(¥¹ï
+<
+java:S1168H"&Return an empty array instead of null.(¥¹ï
+<
+java:S1168M"&Return an empty array instead of null.(¥¹ï
+<
+java:S1168Y"&Return an empty array instead of null.(¥¹ï
+<
+java:S1168^"&Return an empty array instead of null.(¥¹ï
+<
+java:S1168h"&Return an empty array instead of null.(¥¹ï
+<
+java:S1168m"&Return an empty array instead of null.(¥¹ï
+<
+java:S1168z"&Return an empty array instead of null.(¥¹ï
+<
+java:S1168"&Return an empty array instead of null.(¥¹ï
+=
+java:S1168Š"&Return an empty array instead of null.(¥¹ï
+=
+java:S1168"&Return an empty array instead of null.(¥¹ï
+=
+java:S1168 "&Return an empty array instead of null.(¥¹ï
+=
+java:S1168¥"&Return an empty array instead of null.(¥¹ï
+=
+java:S1168´"&Return an empty array instead of null.(¥¹ï
+\
+java:S2147Ä"ECombine this catch with the one at line 194, which has the same body.(§ãä
+a
+java:S2147Æ"ECombine this catch with the one at line 194, which has the same body.(¿šÇ¡øÿÿÿÿ
+=
+java:S1168ö"&Return an empty array instead of null.(¥¹ï
+[
+java:S2147±"ECombine this catch with the one at line 303, which has the same body.(ÿÒ„p
+a
+java:S2147³"ECombine this catch with the one at line 303, which has the same body.(“³Ûİüÿÿÿÿ
+\
+java:S2147µ"ECombine this catch with the one at line 303, which has the same body.(Ë‡…¨
+\
+java:S2147·"ECombine this catch with the one at line 303, which has the same body.(çŞ¡Ğ
+\
+java:S2147¹"ECombine this catch with the one at line 303, which has the same body.(§ãä
+a
+java:S2147»"ECombine this catch with the one at line 303, which has the same body.(©Ë¸Ãşÿÿÿÿ

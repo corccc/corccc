@@ -11,9 +11,7 @@ import com.enc.common.enccommon.controller.BaseController;
 import com.enc.ecdh.encecdh.entity.EcdhRequestEntity;
 import com.enc.ecdh.encecdh.entity.EcdhResponseEntity;
 import com.enc.ecdh.encecdh.service.IEcdhService;
-import com.enc.ecdh.encecdh.service.impl.EcdhService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

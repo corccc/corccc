@@ -3,8 +3,9 @@ import axios from 'axios'
 axios.defaults.headers['Content-Type'] = 'application/json;charset=utf-8'
 
 const token = ""
+const BASE_URL = 'http://localhost:28084'
 const request = axios.create({
-  baseURL: "http://localhost:28085/",
+  baseURL: BASE_URL,
   timeout: 80000
 })
 

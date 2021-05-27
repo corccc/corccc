@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.enc.ecdh</groupId>
     <artifactId>enc-ecdh</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>enc-ecdh</name>
     <description>Demo project for Spring Boot</description>
     <properties>
@@ -42,7 +42,7 @@
         <dependency>
             <groupId>com.enc.common</groupId>
             <artifactId>enc-common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.0.1</version>
         </dependency>
     </dependencies>
 

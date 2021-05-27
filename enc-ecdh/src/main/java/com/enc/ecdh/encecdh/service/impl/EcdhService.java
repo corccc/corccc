@@ -78,10 +78,18 @@ public class EcdhService implements IEcdhService {
             PublicKey  publicKey   = EccUtil.convertPublicKey(requestEntity.getSecp(),
                     new BigInteger(px, 16),
                     new BigInteger(py, 16));
-            byte[] sx = EccUtil.ecdh(privateKey, publicKey);
-            byte[] sy = EccUtil.calY(requestEntity.getSecp(), sx);
+            byte[] skey = EccUtil.ecdh(privateKey, publicKey);
+            byte[] sx   = new byte[skey.length / 2];
+            byte[] sy   = new byte[skey.length / 2];
+            if (skey.length % 2 != 0 && skey[0] == 0x04) {
+                System.arraycopy(skey, 1, sx, 0, skey.length / 2);
+                System.arraycopy(skey, 1 + skey.length / 2, sy, 0, skey.length / 2);
+            } else {
+                 System.arraycopy(skey, 0, sx, 0, skey.length / 2);
+                 System.arraycopy(skey, skey.length / 2, sy, 0, skey.length / 2);
+            }
             responseEntity.setSx(Hex.toHexString(sx));
-            responseEntity.setSy(Hex.toHexString(sy));
+            responseEntity.setSy(Hex.toHexString(sy));                                               
         } catch (Exception e) {
             responseEntity.setShowData(e.getLocalizedMessage());
         }

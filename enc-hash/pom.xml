@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.enc.hash</groupId>
     <artifactId>enc-hash</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>enc-hash</name>
     <description>Demo project for Spring Boot</description>
     <properties>
@@ -41,7 +41,7 @@
         <dependency>
             <groupId>com.enc.common</groupId>
             <artifactId>enc-common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.0.1</version>
         </dependency>
     </dependencies>
 

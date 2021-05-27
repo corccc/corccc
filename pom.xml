@@ -7,13 +7,14 @@
     <groupId>org.example</groupId>
     <artifactId>enc-tool</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <modules>
         <module>enc-common</module>
         <module>enc-hash</module>
         <module>enc-symm</module>
-        <module>enc-asymms</module>
+        <module>enc-asymm</module>
         <module>enc-ecdh</module>
+        <module>enc-cpk</module>
     </modules>
     <dependencyManagement>
         <dependencies>
@@ -21,7 +22,7 @@
             <dependency>
                 <groupId>com.enc.common</groupId>
                 <artifactId>enc-common</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
+                <version>0.0.1</version>
             </dependency>
             <!-- bc encryption library -->
             <dependency>

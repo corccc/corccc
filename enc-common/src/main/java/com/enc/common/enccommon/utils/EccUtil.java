@@ -163,11 +163,15 @@ public class EccUtil extends BaseUtil{
     public static byte[] ecdh(PrivateKey privateKey, PublicKey publicKey) throws NoSuchProviderException, NoSuchAlgorithmException, InvalidKeyException {
         if (privateKey == null || publicKey == null)
             return null;
-        KeyAgreement agreement = KeyAgreement.getInstance("ECDH", "BC");
-        agreement.init(privateKey);
-        agreement.doPhase(publicKey, true);
-        byte[] secret = agreement.generateSecret();
-        return secret;
+        BCECPublicKey  pubKey = (BCECPublicKey) publicKey;
+        BCECPrivateKey priKey = (BCECPrivateKey) privateKey;
+
+        System.out.println(Hex.toHexString(Sm2Util.getPrivateKeyD(privateKey)));
+        System.out.println(publicKey.toString());
+
+        ECPoint pubPoint      = pubKey.getQ();
+        ECPoint point         = pubPoint.multiply(priKey.getD());
+        return point.getEncoded(false);
     }
 
     /**
@@ -182,6 +186,7 @@ public class EccUtil extends BaseUtil{
         System.arraycopy(x, x.length - 1, tBytes, 0, 1);
         BigInteger pxInteger = new BigInteger(tBytes);
         BigInteger divisor = new BigInteger("2");
+        System.out.println(Hex.toHexString(tBytes));
         if (pxInteger.remainder(divisor) == BigInteger.ZERO) {
             byte[] tag = {0x02};
             System.arraycopy(tag, 0, pxBytes, 0, 1);
@@ -189,7 +194,6 @@ public class EccUtil extends BaseUtil{
             byte[] tag = {0x03};
             System.arraycopy(tag, 0, pxBytes, 0, 1);
         }
-        System.arraycopy(x, 0, pxBytes, 1, x.length);
         ECCurve curve = ECCurveUtil.getCurve(spec);
         ECPoint point = curve.decodePoint(pxBytes);
         return point.getAffineYCoord().getEncoded();

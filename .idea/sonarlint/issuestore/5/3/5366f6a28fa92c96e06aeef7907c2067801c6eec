@@ -1,16 +1,22 @@
 
-u
-java:S14888"_Immediately return this expression instead of assigning it to the temporary variable "keyPair".(è¶²¾
-~
-java:S1488†"[Immediately return this expression instead of assigning it to the temporary variable "dec".(¾Îİ¥úÿÿÿÿ8¸‡íê˜/
 D
 java:S1168‚"&Return an empty array instead of null.(¥¹ï8¸‡íê˜/
-]
-java:S1128";Remove this unused import 'org.bouncycastle.crypto.Digest'.(ÄÕ¼ıÿÿÿÿ8¸‡íê˜/
-e
-java:S1128"HRemove this unused import 'org.bouncycastle.jcajce.provider.digest.SM3'.(µêº°8¸‡íê˜/
-C
-java:S1168r"&Return an empty array instead of null.(¥¹ï8¸‡íê˜/
+~
+java:S1488†"[Immediately return this expression instead of assigning it to the temporary variable "dec".(¾Îİ¥úÿÿÿÿ8¸‡íê˜/
+a
+java:S2583˜"CChange this condition so that it does not always evaluate to "true"( óã8ì¾Áí˜/
 }
 java:S1488v"[Immediately return this expression instead of assigning it to the temporary variable "enc".(Ó¸œ—ûÿÿÿÿ8¸‡íê˜/
+e
+java:S1128"HRemove this unused import 'org.bouncycastle.jcajce.provider.digest.SM3'.(µêº°8¸‡íê˜/
 r	java:S117d"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÍŞù´øÿÿÿÿ8¸‡íê˜/
+C
+java:S1168r"&Return an empty array instead of null.(¥¹ï8¸‡íê˜/
+]
+java:S1128";Remove this unused import 'org.bouncycastle.crypto.Digest'.(ÄÕ¼ıÿÿÿÿ8¸‡íê˜/
+u
+java:S14888"_Immediately return this expression instead of assigning it to the temporary variable "keyPair".(è¶²¾
+a
+java:S2583°"CChange this condition so that it does not always evaluate to "true"( óã8¨òÁí˜/
+D
+java:S1168“"&Return an empty array instead of null.(¥¹ï8ì¾Áí˜/

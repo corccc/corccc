@@ -1,0 +1,12 @@
+
+_
+java:S1128
+"=Remove this unused import 'org.bouncycastle.math.ec.ECCurve'.(Œ§ŽÉþÿÿÿÿ8Åõ†î˜/
+Y
+java:S3066"<Lower the visibility of this setter or remove it altogether.(Ò’Š¯8ßªÕí˜/
+^
+java:S3066$"<Lower the visibility of this setter or remove it altogether.(µœª§ûÿÿÿÿ8ßªÕí˜/
+k
+java:S1128"NRemove this unused import 'org.bouncycastle.math.ec.custom.gm.SM2P256V1Curve'.(œ¯•æ8Ê„ëí˜/
+S
+java:S1144,"1Remove this unused private "EccSecp" constructor.(Î±ëÚþÿÿÿÿ8´‰×í˜/

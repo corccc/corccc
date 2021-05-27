@@ -1,0 +1,70 @@
+
+A
+java:S1481þ"*Remove this unused "hello" local variable.(€ü³Ô
+c
+java:S1192ø"GDefine a constant instead of duplicating this literal "123456" 3 times.(õ¹ò¸úÿÿÿÿ
+p
+java:S1128"ZRemove this unused import 'org.bouncycastle.jcajce.provider.config.ProviderConfiguration'.(°Û«Ô
+c
+java:S2095Ü"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(“ œ,
+T	java:S106Ø"9Replace this use of System.out or System.err by a logger.(êÍ­Çùÿÿÿÿ
+k	java:S1175"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›‚Ü°ýÿÿÿÿ
+U
+java:S1128
+"?Remove this unused import 'java.security.spec.ECPublicKeySpec'.(Äî½±
+<
+java:S1168o"&Return an empty array instead of null.(¥¹ï
+T	java:S106 "9Replace this use of System.out or System.err by a logger.(‚ùƒúÿÿÿÿ
+f	java:S117{"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Çþú½
+<
+java:S1168_"&Return an empty array instead of null.(¥¹ï
+R	java:S125€"<This block of commented-out lines of code should be removed.(Ì‘‡¹
+a
+java:S1128"FRemove this unused import 'org.bouncycastle.util.encoders.HexEncoder'.(Ñ…š¦ùÿÿÿÿ
+Y
+java:S1128"CRemove this unused import 'org.bouncycastle.asn1.gm.GMNamedCurves'.(ŸŒ‰”
+Y
+java:S1128"DRemove this unused import 'org.bouncycastle.asn1.x9.X9ECParameters'.(ÅŠû;
+N
+java:S1854í"7Remove this useless assignment to local variable "len".(®î©ñ
+P
+java:S1854þ"9Remove this useless assignment to local variable "hello".(€ü³Ô
+T	java:S106’"9Replace this use of System.out or System.err by a logger.(æð¤ùüÿÿÿÿ
+d
+java:S2095Ý"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(¡Í¤À
+W	java:S125“"<This block of commented-out lines of code should be removed.(Éæëùÿÿÿÿ
+[
+java:S1128	"@Remove this unused import 'java.security.spec.ECPrivateKeySpec'.(¥à–Ùþÿÿÿÿ
+V
+java:S1128";Remove this unused import 'java.security.KeyPairGenerator'.(åÚ¼–úÿÿÿÿ
+[
+java:S1128"FRemove this unused import 'org.bouncycastle.jce.spec.ECParameterSpec'.(¦±“0
+m
+java:S1128"RRemove this unused import 'org.bouncycastle.crypto.params.ECPrivateKeyParameters'.(ç€ÆÑùÿÿÿÿ
+Z
+java:S1124$"EReorder the modifiers to comply with the Java Language Specification.(ˆ˜ 
+O	java:S106"9Replace this use of System.out or System.err by a logger.(ìøÁ‚
+[
+java:S1124&"EReorder the modifiers to comply with the Java Language Specification.(„™®õ
+y
+java:S1488c"^Immediately return this expression instead of assigning it to the temporary variable "pubKey".(Ø¦ÑÊüÿÿÿÿ
+T	java:S106£"9Replace this use of System.out or System.err by a logger.(¨ÜÛüÿÿÿÿ
+[
+java:S1124#"EReorder the modifiers to comply with the Java Language Specification.(¡àí
+H
+java:S1128"2Remove this unused import 'java.security.KeyPair'.(üúì›
+<
+java:S1168G"&Return an empty array instead of null.(¥¹ï
+T	java:S106Ú"9Replace this use of System.out or System.err by a logger.(¹æ°–øÿÿÿÿ
+k	java:S117z"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ù¢¯½ÿÿÿÿÿ
+T	java:S106Ö"9Replace this use of System.out or System.err by a logger.(²£ÝŒþÿÿÿÿ
+T	java:S106ù"9Replace this use of System.out or System.err by a logger.(»±ÞÞùÿÿÿÿ
+O	java:S106ü"9Replace this use of System.out or System.err by a logger.(¹™Ó§
+]
+java:S1128"BRemove this unused import 'org.bouncycastle.util.encoders.Base64'.(¾ùë©þÿÿÿÿ
+d
+java:S1128"NRemove this unused import 'org.bouncycastle.crypto.params.ECDomainParameters'.(ô»¾Å
+e
+java:S1128"ORemove this unused import 'org.bouncycastle.jce.provider.BouncyCastleProvider'.(ŠÎ„¾
+e
+java:S2259„"IA "NullPointerException" could be thrown; "pubKeyPoint" is nullable here.(ùá¿€þÿÿÿÿ

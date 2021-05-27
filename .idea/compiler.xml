@@ -2,18 +2,19 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="demo" />
+        <module name="enc-symm" />
         <module name="enc-common" />
         <module name="enc-dcdh" />
         <module name="enc-hash" />
         <module name="enc-asymm" />
+        <module name="enc-cpk" />
         <module name="enc-ecdh" />
-        <module name="enc-symm" />
-        <module name="enc-asymms" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -21,6 +22,7 @@
       <module name="enc-asymm" target="1.8" />
       <module name="enc-asymms" target="1.8" />
       <module name="enc-common" target="1.8" />
+      <module name="enc-cpk" target="1.8" />
       <module name="enc-dcdh" target="1.5" />
       <module name="enc-ecdh" target="1.8" />
       <module name="enc-ecdh (1)" target="1.8" />
@@ -35,6 +37,7 @@
       <module name="enc-asymm" options="-parameters" />
       <module name="enc-asymms" options="-parameters" />
       <module name="enc-common" options="-parameters" />
+      <module name="enc-cpk" options="-parameters" />
       <module name="enc-ecdh" options="-parameters" />
       <module name="enc-ecdh (1)" options="-parameters" />
       <module name="enc-hash" options="-parameters" />

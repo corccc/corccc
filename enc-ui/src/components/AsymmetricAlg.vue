@@ -39,8 +39,4 @@
     text-align: left;
     line-height: 14px;
   }
-
-  el-tabs {
-    background-color: green;
-  }
 </style>

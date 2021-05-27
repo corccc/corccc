@@ -12,6 +12,8 @@ import com.enc.common.enccommon.exception.CustomException;
 public class StringUtil {
 
     public static String formatHexString(String str) throws CustomException {
+        if (str == null)
+            return "";
         return str
                 .replaceAll("0x", "")
                 .replaceAll("[^0-9a-fA-F]","");

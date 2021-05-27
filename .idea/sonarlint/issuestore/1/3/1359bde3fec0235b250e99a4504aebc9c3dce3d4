@@ -2,9 +2,9 @@
 [	java:S112&"FDefine and throw a dedicated exception instead of using a generic one.(ë‚≈≠
 s
 java:S14883"]Immediately return this expression instead of assigning it to the temporary variable "value".(àÅ∆¶
+t
+java:S1488"^Immediately return this expression instead of assigning it to the temporary variable "cipher".(áñ‹Ù
 <
 java:S1168*"&Return an empty array instead of null.(•πÔç
 Z
 java:S22592"DA "NullPointerException" could be thrown; "cipher" is nullable here.(ÓÚ®ˇ
-t
-java:S1488"^Immediately return this expression instead of assigning it to the temporary variable "cipher".(áñ‹Ù

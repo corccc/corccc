@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from "vue-router"
 
 import Main from '../components/Main'
+import Welcome from '../components/Welcome'
 import SymmetricAlg from '../components/SymmetricAlg'
 import AsymmetricAlg from "../components/AsymmetricAlg";
 import HashAlg from "../components/HashAlg";
@@ -15,11 +16,16 @@ Vue.use(VueRouter);
 
 export const constantRoutes = [
   {
-    path: '/Main',
+    path: '/',
     name: 'main',
     component: Main,
-    // redirect: {name: 'SymmetricAlg'},
+    redirect: {name: 'Welcome'},
     children: [
+      {
+        path: '/Welcome',
+        component: Welcome,
+        name: 'Welcome',
+      },
       {
         path: '/SymmetricAlg',
         component: SymmetricAlg,
