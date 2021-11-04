@@ -1,0 +1,19 @@
+
+
+java:S1488C"]Immediately return this expression instead of assigning it to the temporary variable "bytes".(°è¡œüÿÿÿÿ8ö§ĞÜœ/
+u
+java:S1488)"_Immediately return this expression instead of assigning it to the temporary variable "keyPair".(è¶²¾
+ 
+java:S1130"‰Remove the declaration of thrown exception 'java.security.InvalidAlgorithmParameterException', as it cannot be thrown from method's body.(Ê§ñ´
+C
+java:S1168A"&Return an empty array instead of null.(¥¹ï8æãõÕœ/
+z
+java:S14886"]Immediately return this expression instead of assigning it to the temporary variable "bytes".(õ†Ş¯8ÍÅÊÜœ/
+v
+java:S1488"[Immediately return this expression instead of assigning it to the temporary variable "kpg".(è•öçúÿÿÿÿ
+]
+java:S1128"BRemove this unused import 'java.security.spec.ECGenParameterSpec'.(§Ä©àûÿÿÿÿ
+C
+java:S11684"&Return an empty array instead of null.(¥¹ï8æãõÕœ/
+v
+java:S1128"YRemove this unused import 'org.bouncycastle.jcajce.provider.asymmetric.ec.BCECPublicKey'.(²»ÙŠ8Ë±ÍÜœ/

@@ -1,0 +1,23 @@
+
+R
+java:S18545"7Remove this useless assignment to local variable "bIn".(À©Ò¥øÿÿÿÿ
+c
+java:S5361'"HReplace this call to "replaceAll()" by a call to the "replace()" method.(ÿâÚ°ûÿÿÿÿ
+c
+java:S5361)"HReplace this call to "replaceAll()" by a call to the "replace()" method.(ˆ‡¶®ûÿÿÿÿ
+C
+java:S14816"(Remove this unused "aIn" local variable.(‰Î—¾ÿÿÿÿÿ
+7
+java:S1643K"Use a StringBuilder instead.(ž£Ðªþÿÿÿÿ
+V
+java:S1128"ARemove this unused import 'org.springframework.util.StringUtils'.(Ðôÿ
+c
+java:S5361("HReplace this call to "replaceAll()" by a call to the "replace()" method.( öõñþÿÿÿÿ
+2
+java:S1643I"Use a StringBuilder instead.(˜þ¥§
+C
+java:S14815"(Remove this unused "bIn" local variable.(À©Ò¥øÿÿÿÿ
+c
+java:S5361&"HReplace this call to "replaceAll()" by a call to the "replace()" method.(ÙÞããüÿÿÿÿ
+X
+java:S1854*"=Remove this useless assignment to local variable "certBytes".(•ÏÇüûÿÿÿÿ

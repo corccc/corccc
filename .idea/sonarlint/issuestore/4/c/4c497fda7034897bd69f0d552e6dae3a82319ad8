@@ -1,0 +1,41 @@
+
+v
+java:S1488G"aImmediately return this expression instead of assigning it to the temporary variable "publicKey".(Ò¸Ûb
+v
+java:S1488g"[Immediately return this expression instead of assigning it to the temporary variable "dec".(®„…Éüÿÿÿÿ
+G
+java:S1128"1Remove this unused import 'java.math.BigInteger'.(»Çâ€
+v
+java:S1128"[Remove this unused import 'org.bouncycastle.jcajce.provider.asymmetric.rsa.BCRSAPublicKey'.(¼øÌúÿÿÿÿ
+o
+java:S1128"YRemove this unused import 'org.bouncycastle.jcajce.provider.asymmetric.ec.BCECPublicKey'.(²»ÙŠ
+<
+java:S1168d"&Return an empty array instead of null.(¥¹ï
+I
+java:S1128"3Remove this unused import 'sun.misc.BASE64Encoder'.(ëŞï®
+N
+java:S1128"3Remove this unused import 'sun.misc.BASE64Decoder'.(Ó¨Ôÿÿÿÿÿ
+Z
+java:S1128"?Remove this unused import 'org.bouncycastle.util.encoders.Hex'.(ÕÅ§Ûúÿÿÿÿ
+Y
+java:S1128"CRemove this unused import 'org.bouncycastle.util.io.pem.PemObject'.(½æ¤à
+P
+java:S1191"5Use classes from the Java API instead of Sun classes.(Ó¨Ôÿÿÿÿÿ
+^
+java:S1128"CRemove this unused import 'org.bouncycastle.util.io.pem.PemReader'.(ïë„óùÿÿÿÿ
+q
+java:S1488W"[Immediately return this expression instead of assigning it to the temporary variable "enc".(î×øš
+Y
+java:S1128"CRemove this unused import 'org.bouncycastle.util.io.pem.PemWriter'.(ãÔ°Õ
+r
+java:S1128"\Remove this unused import 'org.bouncycastle.jcajce.provider.asymmetric.rsa.BCRSAPrivateKey'.(®Éã²
+Z
+java:S1128
+"ERemove this unused import 'org.bouncycastle.asn1.pkcs.RSAPrivateKey'.(·†Ğ#
+<
+java:S1168T"&Return an empty array instead of null.(¥¹ï
+u
+java:S1128"ZRemove this unused import 'org.bouncycastle.jcajce.provider.asymmetric.ec.BCECPrivateKey'.(€Õ¤Íüÿÿÿÿ
+u
+java:S14888"_Immediately return this expression instead of assigning it to the temporary variable "keyPair".(è¶²¾
+o	java:S115""ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(‘Çíù

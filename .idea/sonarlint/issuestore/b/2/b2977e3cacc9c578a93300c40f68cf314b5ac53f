@@ -1,0 +1,37 @@
+
+h
+java:S1192‰"LDefine a constant instead of duplicating this literal "å¯†æ–‡å€¼: " 3 times.(à‰ÿÿÿÿÿ
+i
+java:S3776Ş"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(Ç×”ı
+m
+java:S3252S"WUse static access with "com.enc.common.enccommon.utils.BaseUtil" for "getECPublicKeyX".(³Ï®ø
+p
+java:S3252ô"YUse static access with "com.enc.common.enccommon.utils.BaseUtil" for "encodeECSignToDER".(‘„¦§
+r
+java:S3252^"WUse static access with "com.enc.common.enccommon.utils.BaseUtil" for "getECPublicKeyY".(ªÆ—áúÿÿÿÿ
+m
+java:S3252]"WUse static access with "com.enc.common.enccommon.utils.BaseUtil" for "getECPublicKeyX".(³Ï®ø
+i
+java:S1192l"SDefine a constant instead of duplicating this literal "ä¸æ”¯æŒçš„ç®—æ³•" 5 times.(äëÕò
+l
+java:S3252."WUse static access with "com.enc.common.enccommon.utils.BaseUtil" for "getECPublicKeyY".(ıÀ¦y
+r
+java:S3252T"WUse static access with "com.enc.common.enccommon.utils.BaseUtil" for "getECPublicKeyY".(ªÆ—áúÿÿÿÿ
+r
+java:S3252%"WUse static access with "com.enc.common.enccommon.utils.BaseUtil" for "getECPublicKeyY".(ºÌ˜üÿÿÿÿ
+n
+java:S3252/"XUse static access with "com.enc.common.enccommon.utils.BaseUtil" for "getECPrivateKeyD".(İ¢÷ä
+k
+java:S1192ú"ODefine a constant instead of duplicating this literal "éªŒç­¾ç»“æœ: " 3 times.(¤ÚéÓÿÿÿÿÿ
+r
+java:S3252$"WUse static access with "com.enc.common.enccommon.utils.BaseUtil" for "getECPublicKeyX".(›Á—¤ùÿÿÿÿ
+u
+java:S3252”"YUse static access with "com.enc.common.enccommon.utils.BaseUtil" for "encodeECSignToDER".(¶åÅıÿÿÿÿ
+s
+java:S3252&"XUse static access with "com.enc.common.enccommon.utils.BaseUtil" for "getECPrivateKeyD".(ø­‚Ÿúÿÿÿÿ
+r
+java:S3252-"WUse static access with "com.enc.common.enccommon.utils.BaseUtil" for "getECPublicKeyX".(ä¦¯ïúÿÿÿÿ
+c
+java:S1192Ò"LDefine a constant instead of duplicating this literal "æ˜æ–‡å€¼: " 3 times.(ø¯Øÿ
+c
+java:S1192œ"LDefine a constant instead of duplicating this literal "ç­¾åå€¼: " 7 times.(óíé¨

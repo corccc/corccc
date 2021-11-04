@@ -1,0 +1,8 @@
+
+i
+java:S1128	"SRemove this unused import 'org.springframework.web.bind.annotation.RequestMapping'.(ö»¿ë
+T
+java:S3400"9Remove this method and declare a constant for this value.(åèÍ‹øÿÿÿÿ
+n
+java:S1128
+"SRemove this unused import 'org.springframework.web.bind.annotation.RestController'.(±íþ¡þÿÿÿÿ

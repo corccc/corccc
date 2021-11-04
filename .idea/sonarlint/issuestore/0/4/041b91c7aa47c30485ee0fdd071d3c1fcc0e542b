@@ -1,0 +1,43 @@
+
+h
+java:S1192"LDefine a constant instead of duplicating this literal "å¯†æ–‡å€¼: " 3 times.(à‰ÿÿÿÿÿ
+c
+java:S1192µ"LDefine a constant instead of duplicating this literal "ç­¾åå€¼: " 7 times.(óíé¨
+k
+java:S1192–"ODefine a constant instead of duplicating this literal "éªŒç­¾ç»“æœ: " 3 times.(¤ÚéÓÿÿÿÿÿ
+i
+java:S1192}"SDefine a constant instead of duplicating this literal "ä¸æ”¯æŒçš„ç®—æ³•" 5 times.(äëÕò
+c
+java:S1192é"LDefine a constant instead of duplicating this literal "æ˜æ–‡å€¼: " 3 times.(ø¯Øÿ
+r
+java:S3252&"WUse static access with "com.enc.common.enccommon.utils.BaseUtil" for "getECPublicKeyX".(›Á—¤ùÿÿÿÿ
+r
+java:S3252'"WUse static access with "com.enc.common.enccommon.utils.BaseUtil" for "getECPublicKeyY".(ºÌ˜üÿÿÿÿ
+s
+java:S3252("XUse static access with "com.enc.common.enccommon.utils.BaseUtil" for "getECPrivateKeyD".(ø­‚Ÿúÿÿÿÿ
+r
+java:S3252/"WUse static access with "com.enc.common.enccommon.utils.BaseUtil" for "getECPublicKeyX".(ä¦¯ïúÿÿÿÿ
+l
+java:S32520"WUse static access with "com.enc.common.enccommon.utils.BaseUtil" for "getECPublicKeyY".(ıÀ¦y
+n
+java:S32521"XUse static access with "com.enc.common.enccommon.utils.BaseUtil" for "getECPrivateKeyD".(İ¢÷ä
+N	java:S1067"9Replace this use of System.out or System.err by a logger.(¡ìÂƒ
+M	java:S1068"9Replace this use of System.out or System.err by a logger.(¬·èl
+S	java:S106:"9Replace this use of System.out or System.err by a logger.(‹ê·´øÿÿÿÿ
+M	java:S106>"9Replace this use of System.out or System.err by a logger.( µ¼V
+N	java:S106?"9Replace this use of System.out or System.err by a logger.(Ü–ıé
+N	java:S106C"9Replace this use of System.out or System.err by a logger.(µ ç¢
+m
+java:S3252c"WUse static access with "com.enc.common.enccommon.utils.BaseUtil" for "getECPublicKeyX".(³Ï®ø
+r
+java:S3252d"WUse static access with "com.enc.common.enccommon.utils.BaseUtil" for "getECPublicKeyY".(ªÆ—áúÿÿÿÿ
+m
+java:S3252n"WUse static access with "com.enc.common.enccommon.utils.BaseUtil" for "getECPublicKeyX".(³Ï®ø
+r
+java:S3252o"WUse static access with "com.enc.common.enccommon.utils.BaseUtil" for "getECPublicKeyY".(ªÆ—áúÿÿÿÿ
+i
+java:S3776ú"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(Ç×”ı
+p
+java:S3252"YUse static access with "com.enc.common.enccommon.utils.BaseUtil" for "encodeECSignToDER".(‘„¦§
+u
+java:S3252°"YUse static access with "com.enc.common.enccommon.utils.BaseUtil" for "encodeECSignToDER".(¶åÅıÿÿÿÿ
